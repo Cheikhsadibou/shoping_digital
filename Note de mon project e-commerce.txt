@@ -1,0 +1,217 @@
+note de suivis :
+
+===> suvre le tutoriel de ce lien pour métre en place ce project : ( https://www.youtube.com/watch?v=yiRQ2I7Uek0&list=PLBxwSeQlMDNiZU0TstZLivBGbtUmBEBgl&index=2)
+
+===> Beau Rivage
+
+===> GreatKart.rathank.com
+
+===> Fabriquer des produits à l'aide de Moussab
+
+===> s'inspirer du models de ( https://bootstrap-ecommerce.com/ )
+
+===> s'inspirer de Doctring pour creer le ficher requirement.txt lien ( https://www.youtube.com/watch?v=odIR-00ggVI&list=PLmrnugnicuaN-IDo8WS7Bh_DNUHP_UINi )
+
+===> En cas d'erreur revoire le tuto sivants : ( [09]4 Fixing Products Warning and Empty Cart Issue)
+
+===> 
+{% load static %}
+
+<header class="section-header">
+  <nav class="navbar p-md-0 navbar-expand-sm navbar-light border-bottom">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTop4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTop4">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+         <a href="#" class="nav-link">   English </a>
+          
+      </li>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link"> USD </a>
+      </li>
+      </ul>
+      <ul class="navbar-nav">
+      <li><a href="#" class="nav-link"> <i class="fa fa-envelope"></i> Email </a></li>
+      <li><a href="#" class="nav-link"> <i class="fa fa-phone"></i> Call us </a></li>
+    </ul> <!-- list-inline //  -->
+    </div> <!-- navbar-collapse .// -->
+  </div> <!-- container //  -->
+  </nav>
+
+  <section class="header-main border-bottom">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-2 col-md-3 col-6">
+          <a href="./" class="brand-wrap">
+            <img class="logo" src="{% static './images/LoGo.png' %}" />
+          </a>
+          <!-- brand-wrap.// -->
+        </div>
+        
+        <div class="col-lg col-sm col-md col-6 flex-grow-0">
+          <div class="category-wrap dropdown d-inline-block float-right">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" >
+              <i class="fa fa-bars"></i> All category
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'store' %}"> All Products </a>
+              {% for category in links %}
+                <a class="dropdown-item" href="{{ category.get_url }}"> {{ category.category_name }} </a>
+              {% endfor %}
+            </div>
+          </div><!-- category-wrap.// -->
+        </div><!-- col.// -->
+
+        <a href="./store.html" class="btn btn-outline-primary">Store</a>
+        <div class="col-lg col-md-6 col-sm-12 col">
+          <form action="#" class="search">
+            <div class="input-group w-100">
+              <input type="text" class="form-control" style="width: 60%" placeholder="Search" />
+
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+          <!-- search-wrap .end// -->
+        </div>
+        <!-- col.// -->
+        <div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
+          <div class="d-flex justify-content-end mb-3 mb-lg-0">
+            <div class="widget-header">
+              <small class="title text-muted">Welcome guest!</small>
+              <div>
+                <a href="./signin.html">Sign in</a>
+                <span class="dark-transp"> | </span>
+                <a href="./register.html"> Register</a>
+              </div>
+            </div>
+            <a href="./cart.html" class="widget-header pl-3 ml-3">
+              <div class="icon icon-sm rounded-circle border">
+                <i class="fa fa-shopping-cart"></i>
+              </div>
+              <span class="badge badge-pill badge-danger notify">0</span>
+            </a>
+          </div>
+          <!-- widgets-wrap.// -->
+        </div>
+        <!-- col.// -->
+      </div>
+      <!-- row.// -->
+    </div>
+    <!-- container.// -->
+  </section>
+  <!-- header-main .// -->
+</header>
+
+
+===> A consulter   (How to use Q objects for complex queries? --Django) oubien regarder le tuto sur ([09]5 Search Function) à la 16 ieme minute
+
+===> {% if cart_user %}
+     <a href="#" class="btn  btn-success"> <span class="text">Added to cart</span> <i class="fas fa-check"></i></a>
+     <a href="{% url 'cart' %}" class="btn  btn-outline-primary"> <span class="text">Views cart</span> <i class="fas fa-eye"></i></a>
+     {% else %}
+     {% endif %}
+
+4) En cas de probleme we use this input :
+====> <input type="text" id="phone" name="phone" class="form-control" required />
+
+
+5) Commnet utiliser le UserCreationForm dans Django forms
+
+6) demo/checkout/#/pattern/client
+
+7) cette lien nous expplique detail par detail comment creer son compte PayPal et le integrer sur son compte de e_commerce : https://www.youtube.com/watch?v=FDqo0eF_ixA&list=PLBxwSeQlMDNiZU0TstZLivBGbtUmBEBgl&index=82
+
+code de geolocalisation :<script src="https://www.paypal.com/sdk/js?client-id=AVJ8QePjY2Y6HHf7ad8YyxoInMJgoCmSYyAUkvk-HRBs8dnJke1M2qgsQ11eiQWBeg-Rf9XXhRjj0WNf&locale=fr_SN"></script>
+
+
+fetch('http://example.com/movies.json')
+	-then(response = response.json())
+	-then(data => console.log(data));
+video tuto arreter à : 13:49
+
+________________________________________________________________________________________________________
+
+
+<script>
+    
+  function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+  var amount = "{{ grand_total }}"
+  var url = "{% url 'payments' %}"
+  var csrftoken = getCookie('csrftoken');
+  var orderID = "{{order.order_number}}"
+  var payment_method = 'PayPal'
+    
+  // Render the PayPal button into #paypal-button-container
+  paypal.Buttons({
+    
+    style: {
+      color:  'blue',
+      shape:  'rect',
+      label:  'pay',
+      height: 40
+    },
+
+    // Call your server to set up the transaction
+    createOrder: function (data, actions) {
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: amount,
+          }
+        }]
+      });
+    },
+
+    // Call your server to finalize the transaction
+    onApprove: function (data, actions) {
+      return actions.order.capture().then(function (details) {
+
+        // show a success message to the buyer
+        console.log(details);
+        sendData();
+        function sendData(){
+          fetch(url, {
+            method : 'POST',
+            headers : {
+              "content-type" : "application/json",
+              "X-CSRFToken": csrftoken,
+
+            },
+            body: JSON.stringify({
+              orderID: orderID,
+              transID: details.id,
+              payments_method: payments_method,
+              status: details.status,
+            }),
+          })
+          // .then(response => response.json())
+          // .then(data => console.log(data));
+        }
+      });
+    }
+
+
+  }).render('#paypal-button-container');
+</script>
